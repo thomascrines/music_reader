@@ -19790,7 +19790,7 @@
 	    React.createElement(
 	      'h1',
 	      { className: 'title' },
-	      'Music Reader'
+	      '\uD83C\uDFBC Music Reader \uD834\uDD07'
 	    ),
 	    React.createElement(LoginBox, { url: 'http://localhost:5000/' })
 	  );
@@ -25592,7 +25592,7 @@
 	      React.createElement('input', { type: 'password', valueLink: this.linkState('password'), placeholder: 'Password' }),
 	      React.createElement(
 	        'button',
-	        { type: 'submit', onCLick: this.signIn },
+	        { type: 'submit', onClick: this.signIn },
 	        'Sign In'
 	      )
 	    );
@@ -26000,9 +26000,16 @@
 	        React.createElement(
 	          Link,
 	          { to: '/', className: 'title' },
-	          'Music Reader'
+	          '\uD83C\uDFBC ',
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Music Reader '
+	          ),
+	          '\uD834\uDD07'
 	        ),
-	        React.createElement('input', { className: 'search-box', type: 'text', placeholder: 'Search...', value: this.state.searchQuery, onChange: this.doSearch })
+	        React.createElement('br', null),
+	        React.createElement('input', { className: 'search-box', type: 'text', placeholder: 'Search by title or composer', value: this.state.searchQuery, onChange: this.doSearch })
 	      ),
 	      React.createElement(
 	        'div',

@@ -37,7 +37,7 @@ render: function() {
     <form className='login-form'>
     <input type='text' valueLink={this.linkState('email')} placeholder='Email'/>
     <input type='password' valueLink={this.linkState('password')} placeholder='Password'/>
-    <button type='submit' onCLick={this.signIn}>Sign In</button>
+    <button type='submit' onClick={this.signIn}>Sign In</button>
     </form>
     )
 }

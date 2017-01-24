@@ -36,8 +36,8 @@ const Listing = React.createClass({
     return(
       <div className="listing">
         <nav>
-          <Link to='/' className='title'>Music Reader</Link>
-          <input className='search-box' type='text' placeholder='Search...' value={this.state.searchQuery} onChange={this.doSearch} />
+          <Link to='/' className='title'>&#127932; <strong>Music Reader </strong>&#x1D107;</Link><br/>
+          <input className='search-box' type='text' placeholder='Search by title or composer' value={this.state.searchQuery} onChange={this.doSearch} />
         </nav>
 
         <div className='songs-container'>
