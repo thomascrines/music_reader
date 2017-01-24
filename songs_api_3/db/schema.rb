@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20160831152036) do
     t.string   "title"
     t.string   "composer"
     t.string   "date"
-    t.string   "image"
+    t.string   "imagePath"
+    t.string   "imageCount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

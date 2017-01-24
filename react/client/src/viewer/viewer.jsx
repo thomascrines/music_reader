@@ -1,23 +1,18 @@
 const React = require('react')
 
-const Viewer = (props) => (
-  <div className='viewer'>
-    <div className='song-details'>
-      <h3 className='song-title'>{props.title} by {props.composer} ({props.date})</h3>
-    </div>
-    <div className='music-images'>
-    </div>
-  </div>
-)
+const Viewer = (props) => {
+  const songPath = props.params.songPath
+  const imageCount = props.params.imageCount
 
-const { string, number } = React.PropTypes
+  const image1 = './images/' + songPath + '/001.png'
+  const imageUrls = []
+  // for ()
 
-Song.propTypes = {
-  title: string.isRequired,
-  composer: string.isRequired,
-  date: string.isRequired,
-  image: string.isRequired
+  return (
+    <div>I am Viewer
+      <img src={image1} />
+    </div>
+  )
 }
 
-
-module.exports = Song
+module.exports = Viewer

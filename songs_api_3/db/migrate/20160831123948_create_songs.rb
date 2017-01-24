@@ -4,7 +4,8 @@ class CreateSongs < ActiveRecord::Migration
       t.string :title
       t.string :composer
       t.string :date
-      t.string :image
+      t.string :imagePath
+      t.string :imageCount
 
       t.timestamps null: false
     end

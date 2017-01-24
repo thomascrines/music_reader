@@ -47,3 +47,7 @@ button{
   font-family: 'Arbutus Slab',  serif;
   font-size: 15px;
 }
+
+link {
+  text-decoration: none;
+}

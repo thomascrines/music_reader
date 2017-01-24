@@ -50,7 +50,8 @@
 	var ReactDOM = __webpack_require__(158);
 	var Home = __webpack_require__(159);
 	var Listing = __webpack_require__(231);
-	var Main = __webpack_require__(233);
+	var Viewer = __webpack_require__(233);
+	var Main = __webpack_require__(234);
 	var ReactRouter = __webpack_require__(160);
 	var Router = ReactRouter.Router,
 	    Route = ReactRouter.Route,
@@ -68,7 +69,8 @@
 	        Route,
 	        { path: '/', component: Main },
 	        React.createElement(IndexRoute, { component: Home }),
-	        React.createElement(Route, { path: '/songs', component: Listing })
+	        React.createElement(Route, { path: '/songs', component: Listing }),
+	        React.createElement(Route, { path: '/songs/:songPath', component: Viewer })
 	      )
 	    );
 	  }
@@ -26017,7 +26019,7 @@
 	        this.state.songs.filter(function (song) {
 	          return (song.title + ' ' + song.composer).toUpperCase().indexOf(_this2.state.searchQuery.toUpperCase()) >= 0;
 	        }).map(function (song) {
-	          return React.createElement(Song, _extends({}, song, { key: song.id }));
+	          return React.createElement(Song, _extends({ imagePath: song.imagePath, imageCount: song.imageCount }, song, { key: song.id }));
 	        })
 	      )
 	    );
@@ -26033,6 +26035,10 @@
 	'use strict';
 	
 	var React = __webpack_require__(1);
+	var Router = __webpack_require__(160);
+	var Link = Router.Link,
+	    browserHistory = Router.browserHistory;
+	
 	
 	var Song = function Song(props) {
 	  return React.createElement(
@@ -26042,14 +26048,18 @@
 	      'div',
 	      { className: 'song-details' },
 	      React.createElement(
-	        'h3',
-	        { className: 'song-title' },
-	        props.title,
-	        ' by ',
-	        props.composer,
-	        ' (',
-	        props.date,
-	        ')'
+	        Link,
+	        { to: '/songs/' + props.imagePath },
+	        React.createElement(
+	          'h3',
+	          { linkclassName: 'song-title' },
+	          props.title,
+	          ' by ',
+	          props.composer,
+	          ' (',
+	          props.date,
+	          ')'
+	        )
 	      )
 	    )
 	  );
@@ -26071,6 +26081,32 @@
 
 /***/ },
 /* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var Viewer = function Viewer(props) {
+	  var songPath = props.params.songPath;
+	  var imageCount = props.params.imageCount;
+	
+	  var image1 = './images/' + songPath + '/001.png';
+	  var imageUrls = [];
+	  // for ()
+	
+	  return React.createElement(
+	    'div',
+	    null,
+	    'I am Viewer',
+	    React.createElement('img', { src: image1 })
+	  );
+	};
+	
+	module.exports = Viewer;
+
+/***/ },
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

@@ -1,9 +1,14 @@
 const React = require('react')
+const Router = require('react-router')
+const { Link, browserHistory } = Router
+
 
 const Song = (props) => (
   <div className='song'>
     <div className='song-details'>
-      <h3 className='song-title'>{props.title} by {props.composer} ({props.date})</h3>
+    <Link to={'/songs/' + props.imagePath}>
+      <h3 linkclassName='song-title'>{props.title} by {props.composer} ({props.date})</h3>
+      </Link>
     </div>
   </div>
 )

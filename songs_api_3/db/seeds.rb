@@ -13,7 +13,8 @@ Song.create!(
         title: "La Traviata: Atto Primo",
         composer: "G. Verdi",
         date: "1853",
-        image: "placeholder.png"
+        imagePath: "V_LTI",
+        imageCount: '39'
     }
 )
 
@@ -22,6 +23,7 @@ Song.create!(
         title: "Suite Bergamasque: Clair de Lune",
         composer: "C. Debussy",
         date: "1890",
-        image: "placeholder.png"
+        imagePath: "D_CDL",
+        imageCount: '20'
     }
 )

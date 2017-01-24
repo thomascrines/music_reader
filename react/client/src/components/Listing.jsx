@@ -44,7 +44,7 @@ const Listing = React.createClass({
           {
             this.state.songs.filter((song) => `${song.title} ${song.composer}`.toUpperCase().indexOf(this.state.searchQuery.toUpperCase()) >= 0)
              .map((song) => (
-              <Song { ...song } key={song.id}/>
+              <Song imagePath={song.imagePath} imageCount={song.imageCount} { ...song } key={song.id}/>
             ))
 
           }
