@@ -15,7 +15,7 @@ const App = React.createClass({
         <Route path='/' component={Main}>
           <IndexRoute component={Home} />
           <Route path='/songs' component={Listing} />
-          <Route path='/songs/:songPath' component={Viewer}/>
+          <Route path='/songs/:songPath/:imageCount' component={Viewer}/>
         </Route>
       </Router>
     )

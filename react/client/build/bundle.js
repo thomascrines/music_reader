@@ -70,7 +70,7 @@
 	        { path: '/', component: Main },
 	        React.createElement(IndexRoute, { component: Home }),
 	        React.createElement(Route, { path: '/songs', component: Listing }),
-	        React.createElement(Route, { path: '/songs/:songPath', component: Viewer })
+	        React.createElement(Route, { path: '/songs/:songPath/:imageCount', component: Viewer })
 	      )
 	    );
 	  }
@@ -26049,10 +26049,10 @@
 	      { className: 'song-details' },
 	      React.createElement(
 	        Link,
-	        { to: '/songs/' + props.imagePath },
+	        { to: '/songs/' + props.imagePath + '/' + props.imageCount },
 	        React.createElement(
 	          'h3',
-	          { linkclassName: 'song-title' },
+	          { className: 'song-title' },
 	          props.title,
 	          ' by ',
 	          props.composer,
@@ -26065,16 +26065,15 @@
 	  );
 	};
 	
-	var _React$PropTypes = React.PropTypes,
-	    string = _React$PropTypes.string,
-	    number = _React$PropTypes.number;
+	var string = React.PropTypes.string;
 	
 	
 	Song.propTypes = {
 	  title: string.isRequired,
 	  composer: string.isRequired,
 	  date: string.isRequired,
-	  image: string.isRequired
+	  imagePath: string.isRequired,
+	  imageCount: string.isRequired
 	};
 	
 	module.exports = Song;
@@ -26090,15 +26089,15 @@
 	var Viewer = function Viewer(props) {
 	  var songPath = props.params.songPath;
 	  var imageCount = props.params.imageCount;
-	
 	  var image1 = './images/' + songPath + '/001.png';
 	  var imageUrls = [];
-	  // for ()
+	  console.log(imageCount);
+	  console.log(props.params.songPath);
+	  // write a for loop to collect all images
 	
 	  return React.createElement(
 	    'div',
 	    null,
-	    'I am Viewer',
 	    React.createElement('img', { src: image1 })
 	  );
 	};
