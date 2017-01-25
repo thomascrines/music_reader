@@ -26091,9 +26091,14 @@
 	  var imageCount = props.params.imageCount;
 	  var image1 = './images/' + songPath + '/001.png';
 	  var imageUrls = [];
-	  console.log(imageCount);
-	  console.log(props.params.songPath);
-	  // write a for loop to collect all images
+	
+	  var i = 0;
+	  while (i < imageCount) {
+	    i++;
+	    var line = './images/' + songPath + '/00' + i + '.png';
+	    imageUrls.push(line);
+	    console.log(line);
+	  }
 	
 	  return React.createElement(
 	    'div',
