@@ -26095,15 +26095,25 @@
 	  var i = 0;
 	  while (i < imageCount) {
 	    i++;
-	    var line = './images/' + songPath + '/00' + i + '.png';
-	    imageUrls.push(line);
-	    console.log(line);
+	    if (i < 10) {
+	      var line = './images/' + songPath + '/00' + i + '.png';
+	      imageUrls.push(line);
+	      console.log(line);
+	    } else {
+	      var _line = './images/' + songPath + '/0' + i + '.png';
+	      imageUrls.push(_line);
+	      console.log(_line);
+	    }
 	  }
+	
+	  var songList = imageUrls.map(function (image, index) {
+	    return React.createElement('img', { src: image });
+	  });
 	
 	  return React.createElement(
 	    'div',
 	    null,
-	    React.createElement('img', { src: image1 })
+	    songList
 	  );
 	};
 	
